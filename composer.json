@@ -1,0 +1,14 @@
+{
+    "name": "aliyun/openapi",
+    "type": "library",
+    "description": "Aliyun Open Api SDK for PHP",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "autoload": {
+       "files": ["./aliyun-php-sdk-core/Autoloader/Autoloader.php"]
+    },
+    "require": {
+        "php": ">=5.3",
+        "ext-curl": "*"
+    }
+}

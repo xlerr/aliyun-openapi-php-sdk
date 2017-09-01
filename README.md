@@ -22,6 +22,32 @@ $request->setMethod("GET");
 $response = $client->getAcsResponse($request);
 print_r($response);
 ```
+
+## Example for composer
+
+```php
+include_once '../vendor/autoload.php';
+
+use Ecs\Request\V20140526 as Ecs;
+
+Autoloader::addAutoloadPath("aliyun-php-sdk-ecs");
+
+$endpoints = [
+    new Endpoint('cn-hangzhou', ['cn-hangzhou'], [
+        new ProductDomain('Ecs', 'ecs-cn-hangzhou.aliyuncs.com'),
+    ]),
+];
+EndpointProvider::setEndpoints($endpoints);
+
+$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "<your accessKey>", "<your accessSecret>");
+$client = new DefaultAcsClient($iClientProfile);
+
+$request = new Ecs\DescribeRegionsRequest();
+$request->setMethod("GET");
+$response = $client->getAcsResponse($request);
+print_r($response);
+```
+
 ## Authors && Contributors
 
 - [Zuhe]()
